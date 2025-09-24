@@ -13,6 +13,13 @@ namespace Figma_zadanie_z_zadaniami
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Manrope-Bold.otf", "ManropeBold");
+                    fonts.AddFont("Manrope-ExrtaBold.otf", "ManropeExtraBold");
+                    fonts.AddFont("Manrope-Light.otf", "ManropeLight");
+                    fonts.AddFont("Manrope-ExtraLight.otf", "ManropeExtraLight");
+                    fonts.AddFont("Manrope-Medium.otf", "ManropeMedium");
+                    fonts.AddFont("Manrope-Regular.otf", "ManropeRegular");
+                    fonts.AddFont("Manrope-Semibold.otf", "ManropeSemiBold");
                 });
 
 #if DEBUG
