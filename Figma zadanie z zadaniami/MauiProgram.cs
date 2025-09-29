@@ -11,8 +11,6 @@ namespace Figma_zadanie_z_zadaniami
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("Manrope-Bold.otf", "ManropeBold");
                     fonts.AddFont("Manrope-ExrtaBold.otf", "ManropeExtraBold");
                     fonts.AddFont("Manrope-Light.otf", "ManropeLight");

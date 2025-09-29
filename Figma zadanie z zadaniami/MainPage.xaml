@@ -2,20 +2,61 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Figma_zadanie_z_zadaniami.MainPage">
-
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.1"></RowDefinition>
-            <RowDefinition Height="0.2"></RowDefinition>
-            <RowDefinition Height="0.3"></RowDefinition>
-            <RowDefinition Height="0.4"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.1"></ColumnDefinition>
-            <ColumnDefinition Width="0.2"></ColumnDefinition>
-            <ColumnDefinition Width="0.3"></ColumnDefinition>
-            <ColumnDefinition Width="0.4"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-    </Grid>
+    <ScrollView Style="{StaticResource ScrollViewStyle}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.2*"></RowDefinition>
+                <RowDefinition Height="0.3*"></RowDefinition>
+                <RowDefinition Height="0.4*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" 
+               Grid.Column="0"
+               Style="{StaticResource FrameStyle}"
+               Grid.ColumnSpan="2">
+            <Label
+               Text="Dodaj produkt" 
+               Style="{StaticResource LabelStyle}"
+                />
+            </Border>
+            <Entry Grid.Row="0"
+               Grid.Column="0"
+               x:Name="AddItem"
+               Placeholder="Wpisz produkt..."/>
+            <Button Grid.Row="0" 
+                Grid.Column="1" 
+                Text="Dodaj"
+                Clicked="AddButton_Clicked"
+                Style="{StaticResource ButtonStyle}"/>
+            <CollectionView ItemsSource="{Binding Products}" 
+                            Grid.Row="1" 
+                            Grid.ColumnSpan="3"
+                            x:Name="wyswietl"
+                            SelectionMode="Single"
+                            Style="{StaticResource collViewStyle}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,*" Padding="10">
+                            <Label Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" />
+                            <Label Grid.Column="1" Text="{Binding Quantity}" VerticalOptions="Center" HorizontalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Grid.Row="3" 
+                    Grid.Column="0" 
+                    Text="Usuń"
+                    Style="{StaticResource ButtonStyle}"/>
+            <Button Grid.Row="3" 
+                    Grid.Column="1"
+                    Clicked="DelButton_Clicked"
+                    Text="Zrobione"
+                    Style="{StaticResource ButtonStyle}"/>
+        </Grid>
+    </ScrollView>
 
 </ContentPage>

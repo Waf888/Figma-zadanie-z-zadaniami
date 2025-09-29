@@ -9,6 +9,30 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="ScrollViewStyle"
+                   TargetType="ScrollView">
+                <Setter Property="BackgroundColor" Value="#BCB8B1"/>
+            </Style>
+            <Style x:Key="LabelStyle"  TargetType="Label">
+                <Setter Property="BackgroundColor" Value="#736E6E"/>
+                <Setter Property="FontFamily" Value="ManropeMedium"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="FrameStyle" TargetType="Border">
+                <Setter Property="BackgroundColor" Value="#BCB8B1"/>
+                <Setter Property="HeightRequest" Value="55"/>
+                <Setter Property="WidthRequest" Value="226"/>
+            </Style>
+            <Style x:Key="ButtonStyle"  TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#736E6E"/>
+                <Setter Property="FontFamily" Value="ManropeMedium"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="HeightRequest" Value="55"/>
+                <Setter Property="WidthRequest" Value="88"/>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
