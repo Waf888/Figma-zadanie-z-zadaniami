@@ -24,6 +24,7 @@
                 <Setter Property="BackgroundColor" Value="#BCB8B1"/>
                 <Setter Property="HeightRequest" Value="55"/>
                 <Setter Property="WidthRequest" Value="226"/>
+                <Setter Property="Stroke" Value="#463F3A"/>
             </Style>
             <Style x:Key="ButtonStyle"  TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#736E6E"/>
@@ -31,6 +32,14 @@
                 <Setter Property="FontSize" Value="Large"/>
                 <Setter Property="HeightRequest" Value="55"/>
                 <Setter Property="WidthRequest" Value="88"/>
+                <Setter Property="BorderWidth" Value="2"/>
+                <Setter Property="BorderColor" Value="#463F3A"/>
+            </Style>
+            <Style x:Key="ContenPageStyle"
+                   TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="#BCB8B1"/>
+                <Setter Property="WidthRequest" Value="393"/>
+                <Setter Property="HeightRequest" Value="852"/>
             </Style>
 
         </ResourceDictionary>

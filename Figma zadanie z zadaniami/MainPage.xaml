@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Figma_zadanie_z_zadaniami.MainPage">
+             x:Class="Figma_zadanie_z_zadaniami.MainPage"
+             Style="{StaticResource ContenPageStyle}">
     <ScrollView Style="{StaticResource ScrollViewStyle}">
         <Grid>
             <Grid.RowDefinitions>
@@ -23,20 +24,23 @@
                Style="{StaticResource LabelStyle}"
                 />
             </Border>
-            <Entry Grid.Row="0"
+            <Entry Grid.Row="1"
                Grid.Column="0"
                x:Name="AddItem"
                Placeholder="Wpisz produkt..."/>
-            <Button Grid.Row="0" 
+            <Button Grid.Row="1" 
                 Grid.Column="1" 
                 Text="Dodaj"
                 Clicked="AddButton_Clicked"
                 Style="{StaticResource ButtonStyle}"/>
             <CollectionView ItemsSource="{Binding Products}" 
-                            Grid.Row="1" 
-                            Grid.ColumnSpan="3"
+                            Grid.Row="2" 
+                            Grid.ColumnSpan="2"
                             x:Name="wyswietl"
                             SelectionMode="Single"
+                            BackgroundColor="#736E6E"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
                             Style="{StaticResource collViewStyle}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -50,6 +54,7 @@
             <Button Grid.Row="3" 
                     Grid.Column="0" 
                     Text="Usuń"
+                    Clicked="DelButton_Clicked"
                     Style="{StaticResource ButtonStyle}"/>
             <Button Grid.Row="3" 
                     Grid.Column="1"
