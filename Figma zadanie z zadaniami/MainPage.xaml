@@ -1,67 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Figma_zadanie_z_zadaniami.MainPage"
-             Style="{StaticResource ContenPageStyle}">
-    <ScrollView Style="{StaticResource ScrollViewStyle}">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.1*"></RowDefinition>
-                <RowDefinition Height="0.2*"></RowDefinition>
-                <RowDefinition Height="0.3*"></RowDefinition>
-                <RowDefinition Height="0.4*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.1*"></ColumnDefinition>
-                <ColumnDefinition Width="0.2*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Border Grid.Row="0" 
-               Grid.Column="0"
-               Style="{StaticResource FrameStyle}"
-               Grid.ColumnSpan="2">
-            <Label
-               Text="Dodaj produkt" 
-               Style="{StaticResource LabelStyle}"
-                />
-            </Border>
-            <Entry Grid.Row="1"
-               Grid.Column="0"
-               x:Name="AddItem"
-               Placeholder="Wpisz produkt..."/>
-            <Button Grid.Row="1" 
-                Grid.Column="1" 
-                Text="Dodaj"
-                Clicked="AddButton_Clicked"
-                Style="{StaticResource ButtonStyle}"/>
-            <CollectionView ItemsSource="{Binding Products}" 
-                            Grid.Row="2" 
-                            Grid.ColumnSpan="2"
-                            x:Name="wyswietl"
-                            SelectionMode="Single"
-                            BackgroundColor="#736E6E"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            Style="{StaticResource collViewStyle}">
+             x:Class="Figma_zadanie_z_zadaniami.MainPage">
+
+    <Grid RowSpacing="8" Padding="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0" Style="{StaticResource CollectionBackground}">
+            <Label Text="Dodaj zadanie"
+                   Style="{StaticResource HeaderLabelStyle}" />
+        </Frame>
+
+        <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Entry x:Name="AddItem" 
+                   Placeholder="Wpisz zadanie..." 
+                   Style="{StaticResource EntryStyle}" />
+            <Button Text="Dodaj" 
+                    Clicked="AddButton_Clicked" 
+                    Style="{StaticResource ButtonStyle}" 
+                    VerticalOptions="Center" />
+        </StackLayout>
+
+        <Frame Grid.Row="2" Style="{StaticResource CollectionBackground}">
+            <CollectionView x:Name="wyswietl" ItemsSource="{Binding Tasks}" SelectionMode="None">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid ColumnDefinitions="*,*" Padding="10">
-                            <Label Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" />
-                            <Label Grid.Column="1" Text="{Binding Quantity}" VerticalOptions="Center" HorizontalOptions="End" />
-                        </Grid>
+                        <Frame Style="{StaticResource ItemFrameStyle}">
+                            <Grid ColumnDefinitions="*,Auto" Padding="4">
+                                <Label Text="{Binding Name}" 
+                                       FontFamily="TwojaCzcionka"
+                                       VerticalOptions="Center"/>
+                                <CheckBox IsChecked="{Binding IsSelected}" 
+                                          VerticalOptions="Center" Grid.Column="1" />
+                            </Grid>
+                        </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button Grid.Row="3" 
-                    Grid.Column="0" 
-                    Text="Usuń"
-                    Clicked="DelButton_Clicked"
-                    Style="{StaticResource ButtonStyle}"/>
-            <Button Grid.Row="3" 
-                    Grid.Column="1"
-                    Clicked="DelButton_Clicked"
-                    Text="Zrobione"
-                    Style="{StaticResource ButtonStyle}"/>
-        </Grid>
-    </ScrollView>
+        </Frame>
 
+        <Grid Grid.Row="3" ColumnDefinitions="*,*" HorizontalOptions="FillAndExpand" Margin="4,8,4,4">
+            <Button Grid.Column="0" 
+                    Text="Usuń" 
+                    Clicked="DeleteSelected_Clicked" 
+                    Style="{StaticResource ButtonStyle}" />
+
+            <Button Grid.Column="1"
+                    x:Name="DoneButton"
+                    Text="Zrobione : 0"
+                    Clicked="MarkSelectedDone_Clicked"
+                    Style="{StaticResource ButtonStyle}" />
+        </Grid>
+    </Grid>
 </ContentPage>
+

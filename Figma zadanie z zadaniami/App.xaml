@@ -3,45 +3,60 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Figma_zadanie_z_zadaniami"
              x:Class="Figma_zadanie_z_zadaniami.App">
-    <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-            <Style x:Key="ScrollViewStyle"
-                   TargetType="ScrollView">
-                <Setter Property="BackgroundColor" Value="#BCB8B1"/>
-            </Style>
-            <Style x:Key="LabelStyle"  TargetType="Label">
-                <Setter Property="BackgroundColor" Value="#736E6E"/>
-                <Setter Property="FontFamily" Value="ManropeMedium"/>
-                <Setter Property="FontSize" Value="Large"/>
-                <Setter Property="VerticalTextAlignment" Value="Center"/>
-                <Setter Property="HorizontalTextAlignment" Value="Center"/>
-            </Style>
-            <Style x:Key="FrameStyle" TargetType="Border">
-                <Setter Property="BackgroundColor" Value="#BCB8B1"/>
-                <Setter Property="HeightRequest" Value="55"/>
-                <Setter Property="WidthRequest" Value="226"/>
-                <Setter Property="Stroke" Value="#463F3A"/>
-            </Style>
-            <Style x:Key="ButtonStyle"  TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#736E6E"/>
-                <Setter Property="FontFamily" Value="ManropeMedium"/>
-                <Setter Property="FontSize" Value="Large"/>
-                <Setter Property="HeightRequest" Value="55"/>
-                <Setter Property="WidthRequest" Value="88"/>
-                <Setter Property="BorderWidth" Value="2"/>
-                <Setter Property="BorderColor" Value="#463F3A"/>
-            </Style>
-            <Style x:Key="ContenPageStyle"
-                   TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="#BCB8B1"/>
-                <Setter Property="WidthRequest" Value="393"/>
-                <Setter Property="HeightRequest" Value="852"/>
-            </Style>
 
-        </ResourceDictionary>
-    </Application.Resources>
-</Application>
+    <Application.Resources>
+            <ResourceDictionary>
+
+                <Color x:Key="BackgroundColor">#C0BCB3</Color>
+                <Color x:Key="FrameColor">#7B6F6F</Color>
+                <Color x:Key="ButtonColor">#7B6F6F</Color>
+                <Color x:Key="ButtonTextColor">White</Color>
+
+                <Style TargetType="ContentPage">
+                    <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+                </Style>
+
+                <Style x:Key="ButtonStyle" TargetType="Button">
+                    <Setter Property="BackgroundColor" Value="{StaticResource ButtonColor}" />
+                    <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+                    <Setter Property="CornerRadius" Value="8" />
+                    <Setter Property="FontFamily" Value="TwojaCzcionka" />
+                    <Setter Property="FontSize" Value="16" />
+                    <Setter Property="Padding" Value="12,6" />
+                </Style>
+
+                <Style x:Key="EntryStyle" TargetType="Entry">
+                    <Setter Property="BackgroundColor" Value="White" />
+                    <Setter Property="TextColor" Value="Black" />
+                    <Setter Property="FontFamily" Value="TwojaCzcionka" />
+                    <Setter Property="FontSize" Value="16" />
+                    <Setter Property="HeightRequest" Value="40" />
+                </Style>
+
+                <Style x:Key="ItemFrameStyle" TargetType="Frame">
+                    <Setter Property="BackgroundColor" Value="{StaticResource FrameColor}" />
+                    <Setter Property="CornerRadius" Value="8" />
+                    <Setter Property="HasShadow" Value="False" />
+                    <Setter Property="Padding" Value="6" />
+                    <Setter Property="Margin" Value="4" />
+                </Style>
+
+                <Style x:Key="CollectionBackground" TargetType="Frame">
+                    <Setter Property="BackgroundColor" Value="{StaticResource FrameColor}" />
+                    <Setter Property="CornerRadius" Value="10" />
+                    <Setter Property="HasShadow" Value="True" />
+                    <Setter Property="Padding" Value="8" />
+                    <Setter Property="Margin" Value="6" />
+                </Style>
+
+                <Style x:Key="HeaderLabelStyle" TargetType="Label">
+                    <Setter Property="FontSize" Value="20" />
+                    <Setter Property="FontAttributes" Value="Bold" />
+                    <Setter Property="HorizontalOptions" Value="Center" />
+                    <Setter Property="FontFamily" Value="TwojaCzcionka" />
+                    <Setter Property="TextColor" Value="White" />
+                </Style>
+
+            </ResourceDictionary>
+        </Application.Resources>
+    </Application>
