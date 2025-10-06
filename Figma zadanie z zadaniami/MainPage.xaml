@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Figma_zadanie_z_zadaniami.MainPage">
 
-    <Grid RowSpacing="8" Padding="12">
+    <Grid RowSpacing="8" Padding="12"
+          Style="{StaticResource gridstyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -16,7 +17,7 @@
                    Style="{StaticResource HeaderLabelStyle}" />
         </Frame>
 
-        <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+        <StackLayout Grid.Row="1" Orientation="Horizontal">
             <Entry x:Name="AddItem" 
                    Placeholder="Wpisz zadanie..." 
                    Style="{StaticResource EntryStyle}" />
@@ -31,10 +32,11 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame Style="{StaticResource ItemFrameStyle}">
-                            <Grid ColumnDefinitions="*,Auto" Padding="4">
+                            <Grid ColumnDefinitions="*,Auto" Padding="4" BackgroundColor="#736E6E">
                                 <Label Text="{Binding Name}" 
-                                       FontFamily="TwojaCzcionka"
-                                       VerticalOptions="Center"/>
+                                       FontFamily="ManropeRegular"
+                                       VerticalOptions="Center"
+                                       TextColor="White"/>
                                 <CheckBox IsChecked="{Binding IsSelected}" 
                                           VerticalOptions="Center" Grid.Column="1" />
                             </Grid>
@@ -44,7 +46,7 @@
             </CollectionView>
         </Frame>
 
-        <Grid Grid.Row="3" ColumnDefinitions="*,*" HorizontalOptions="FillAndExpand" Margin="4,8,4,4">
+        <Grid Grid.Row="3" ColumnDefinitions="*,*" Margin="4,8,4,4">
             <Button Grid.Column="0" 
                     Text="Usuń" 
                     Clicked="DeleteSelected_Clicked" 
