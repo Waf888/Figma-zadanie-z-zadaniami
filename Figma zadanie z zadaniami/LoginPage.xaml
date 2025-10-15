@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Figma_zadanie_z_zadaniami.LoginPage"
-             Title="LoginPAge">
+             Title="LoginPage"
+             Shell.NavBarIsVisible="True"
+             Shell.FlyoutBehavior="Disabled">
 
     <Grid RowSpacing="8" Padding="12">
         <Grid.RowDefinitions>
@@ -15,9 +17,9 @@
 
 
         <StackLayout Grid.Row="1" Orientation="Horizontal">
-            <Entry x:Name="Login" 
+            <Entry x:Name="Login"  Text="{Binding Email}"
                    Placeholder="Wpisz login..." />
-            <Entry x:Name="Password" 
+            <Entry x:Name="Password" Text="{Binding Password}"
                    Placeholder="Wpisz hasło..." />
             <Button Text="Zaloguj"
                     Clicked="LoginButtonClicked"

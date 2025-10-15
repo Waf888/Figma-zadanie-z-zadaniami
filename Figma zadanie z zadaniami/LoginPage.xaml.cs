@@ -19,15 +19,15 @@ public partial class LoginPage : ContentPage
 
 		if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
 		{
-			
-		}
+            await DisplayAlert("Error", "Wpisz login i has³o", "OK");
+        }
 		if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
 		{
-
-		}
-		if (email == "x" && password == "haslo")
+            await DisplayAlert("Error", "Wpisz poprawny email", "OK");
+        }
+		if (email == "x@gmail.com" && password == "x")
 		{
-			await Navigation.PushAsync();
+			await Shell.Current.GoToAsync("//MainPage");
 		}
 		else
 		{

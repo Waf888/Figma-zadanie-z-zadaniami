@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Figma_zadanie_z_zadaniami.MainPage">
+             x:Class="Figma_zadanie_z_zadaniami.MainPage"
+             Shell.FlyoutBehavior="Disabled"
+             >
 
     <Grid RowSpacing="8" Padding="12"
           Style="{StaticResource gridstyle}">

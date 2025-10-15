@@ -4,7 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Figma_zadanie_z_zadaniami"
-    Title="Figma_zadanie_z_zadaniami">
+    Title="Figma_zadanie_z_zadaniami"
+    Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
         Title="LoginPage"
