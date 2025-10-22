@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
+using System.Text.Json;
 
 namespace Figma_zadanie_z_zadaniami
 {
@@ -7,6 +8,7 @@ namespace Figma_zadanie_z_zadaniami
     {
         public ObservableCollection<TaskItem> Tasks { get; set; }
         private int doneCount = 0;
+        private string filePath = Path.Combine(FileSystem.AppDataDirectory, "task.json");
 
         public MainPage()
         {
@@ -41,6 +43,27 @@ namespace Figma_zadanie_z_zadaniami
             }
 
             DoneButton.Text = $"Zrobione : {doneCount}";
+        }
+
+        private void SaveButton_Clicked(object sender, EventArgs e)
+        {
+            string json = JsonSerializer.Serialize(Tasks);
+            File.WriteAllText(filePath, json);
+        }
+
+        private void LoadButton_Clicked(object sender, EventArgs e)
+        {
+            string json = File.ReadAllText(filePath);
+            var restored = JsonSerializer.Deserialize<List<TaskItem>>(json);
+            Tasks.Clear();
+            foreach (var item in restored)
+                Tasks.Add(item);
+        
+        }
+
+        private void WylogujButton_Clicked(object sender, EventArgs e)
+        {
+            Shell.Current.GoToAsync("//LoginPage");
         }
     }
 

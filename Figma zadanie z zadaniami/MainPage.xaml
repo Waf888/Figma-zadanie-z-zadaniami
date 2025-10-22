@@ -48,7 +48,7 @@
             </CollectionView>
         </Frame>
 
-        <Grid Grid.Row="3" ColumnDefinitions="*,*" Margin="4,8,4,4">
+        <Grid Grid.Row="3" ColumnDefinitions="*,*,*" RowDefinitions="*,*" Margin="4,8,4,4">
             <Button Grid.Column="0" 
                     Text="Usuń" 
                     Clicked="DeleteSelected_Clicked" 
@@ -58,6 +58,19 @@
                     x:Name="DoneButton"
                     Text="Zrobione : 0"
                     Clicked="MarkSelectedDone_Clicked"
+                    Style="{StaticResource ButtonStyle}" />
+
+            <Button Grid.Column="2"
+                    Text="Wyloguj"
+                    Clicked="WylogujButton_Clicked"
+                    Style="{StaticResource ButtonStyle}" />
+            <Button Grid.Column="0" Grid.Row="1"
+                    Clicked="SaveButton_Clicked"
+                    Text="Save"
+                    Style="{StaticResource ButtonStyle}" />
+            <Button Grid.Column="1" Grid.Row="1"
+                    Clicked="LoadButton_Clicked"
+                    Text="Load"
                     Style="{StaticResource ButtonStyle}" />
         </Grid>
     </Grid>
